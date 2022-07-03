@@ -5,19 +5,14 @@ Date: 1st July 2022 */
 
 var express = require('express');
 var router = express.Router();
+let usersController = require('../controllers/user');
+let passport = require('passport');
 
-router.get('/', userspage);
+//Routes for sign-in
+router.get('/login', usersController.displayLoginPage);
+router.post('/login', usersController.processLoginPage);
 
-
-function userspage(req, res, next) {
-    res.render(
-        'users', {
-            title: 'Users',
-            userName: 'Ahnaf'
-        }
-
-    );
-
-}
+// Route for sign-out
+router.get('/logout', usersController.processLogout);
 
 module.exports = router;

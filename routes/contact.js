@@ -8,10 +8,10 @@ let router = express.Router();
 let contactController = require('../controllers/contactList');
 
 function requireAuth(req, res, next) {
-    if (!req.isAuthenticated() {
-            return res.redirect('../../users/login');
-        }
-        next();)
+    if (!req.isAuthenticated()) {
+        return res.redirect('../../users/login');
+    }
+    next();
 }
 
 //GET contact list
