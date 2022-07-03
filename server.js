@@ -12,7 +12,7 @@ Date: 1st July 2022 */
  */
 
 var app = require('./config/app');
-var debug = require('debug')('comp229.003.assignment1:server');
+var debug = require('debug')('comp229.003.assignment-2:server');
 var http = require('http');
 
 /**
