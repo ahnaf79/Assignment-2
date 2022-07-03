@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs'); %>
+    <div class="wrapper-container">
+        <%- include('partials/navbar.ejs'); %>
+            <section id="myproject" class="my-project">
+                <div style="padding-top: 20px;">
+                    <h2>Projects</h2>
+                    <table>
+                        <tr>
+                            <td><img src="/images/project1.png" height="200px"></td>
+                            <td>
+                                <strong>A simple Bug Smasher browser-based (HTML5 canvas) game</strong><br> The bug hops randomly around the game area at a given interval. The player tries to catch the bug by clicking on it. If he succeeds, the score
+                                is incremented and the hopping interval is decremented by a number of milliseconds, so it gets harder to catch the bug. If the game becomes too challenging, the payer can reset the speed to the initial hopping interval
+                                by clicking the Reset Speed button. If the player wants, he can start again by resetting the score by clicking the Reset Score button.
+                                <br> Role: Design, Documentation, Implentation
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/project2.png" height="200px"></td>
+                            <td>
+                                <strong>Member Registration to Summer Camp</strong><br> This is a form from which people can register online to a fun summer camp.
+                                <br> Role: Design, Documentation, Implentation
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/project3.png" height="200px"></td>
+                            <td>
+                                <strong>Shipping Address and Billing Address</strong><br> A prototype version of the shipping page my e-commerce website.
+                                <br> Role: Design, Documentation, Implentation
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+    </div>
+    <%- include('partials/footer.ejs'); %>

@@ -1,0 +1,146 @@
+/* File name: style.css
+Student name: Ahnaf Tahmid
+StudentID: 301221126
+Date: 1st July 2022 */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#logoimg {
+    margin: 2px auto auto 1px;
+    width: 150px;
+    height: 150px;
+}
+
+#maincontent {
+    background-image: url(/images/background.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+a {
+    color: #00B7FF;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    color: #2b2e4a;
+    font-size: 3.4em;
+    text-align: left;
+}
+
+h3 {
+    color: #393232;
+    font-size: 2.4em;
+    text-align: left;
+}
+
+.wrapper-container {
+    max-width: 1200px;
+    margin-left: calc((100% - 1200px) / 2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.navigation-bar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation-bar li {
+    list-style: none;
+}
+
+.navigation-bar li a {
+    text-decoration: none;
+    color: #3d5a80;
+    padding: 1rem;
+    display: block;
+}
+
+.navigation-bar a {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.navigation-bar a:hover {
+    color: #366adb;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.aboutme h2 {
+    margin: 28px auto;
+}
+
+.aboutme h3 {
+    margin: 16px auto;
+}
+
+.aboutme p {
+    color: #3d5a80;
+    font-size: 1.5em;
+    margin: 0 8px 15px;
+}
+
+.myservice h2 {
+    margin: 28px auto;
+}
+
+.myproject {
+    height: 850px;
+}
+
+.myproject h2 {
+    margin: 28px auto 14px;
+}
+
+.myproject>.flex-container {
+    margin-top: 0;
+}
+
+.myproject h3 {
+    margin-top: 5px;
+}
+
+.contactme h2 {
+    margin: 28px auto 14px;
+    padding-top: 0.5em;
+}
+
+.contactme p {
+    color: #293241;
+    font-size: 1.3em;
+    margin-left: 6px;
+}
+
+.footer {
+    display: flex;
+}
+
+.footer p {
+    color: #393232;
+    flex: 3;
+    font-size: 1.5em;
+    margin: 1.8em auto auto 1.5em;
+}

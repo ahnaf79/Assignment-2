@@ -1,0 +1,11 @@
+<% if (title=="Home" ) { %>
+    <%- include('./home') %>
+        <% } else if (title=="About Me" ) { %>
+            <%- include('./about_us') %>
+                <% } else if (title=="My Services" ) { %>
+                    <%- include('./services') %>
+                        <% } else if (title=="Projects" ) { %>
+                            <%- include('./projects') %>
+                                <% } else if (title=="Contact Me" ) { %>
+                                    <%- include('./contacts') %>
+                                        <% } %>
