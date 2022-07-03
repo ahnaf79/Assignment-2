@@ -5,34 +5,15 @@ Date: 1st July 2022 */
 
 let mongoose = require('mongoose');
 let crypto = require('crypto');
-let Schema = mongoose.Schema;
 
 let UserSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
-    email: {
-        type: String,
-        match: [/.+\@.+\..+/, "Please fill a valid e-mail address"]
-    },
-    username: {
-        type: String,
-        unique: true,
-        required: 'Username is required',
-        trim: true
-    },
-    password: {
-        type: String,
-        validate: [(password) => {
-            return password && password.length > 6;
-        }, 'Password should be longer']
-    },
-    salt: {
-        type: String
-    },
-    provider: {
-        type: String,
-        required: 'Provider is required'
-    },
+    email: String,
+    username: String,
+    password: String,
+    salt: String,
+    provider: String,
     providerId: String,
     providerData: {},
     created: {
@@ -92,5 +73,6 @@ UserSchema.set('toJSON', {
     getters: true,
     virtuals: true
 });
+
 
 module.exports = mongoose.model('User', UserSchema);
