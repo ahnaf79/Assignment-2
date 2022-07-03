@@ -4,7 +4,7 @@ StudentID: 301221126
 Date: 1st July 2022 */
 
 let mongoose = require('mongoose');
-let contact_Model = mongoose.Schema({
+let contactModel = mongoose.Schema({
         Name: String,
         Number: String,
         Email: String
@@ -14,4 +14,4 @@ let contact_Model = mongoose.Schema({
 
 );
 
-module.exports = mongoose.model('contacts', contact_Model);
+module.exports = mongoose.model('contacts', contactModel);
