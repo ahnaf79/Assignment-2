@@ -28,10 +28,10 @@ function getErrorMessage(err) {
     return message;
 };
 
-module.exports.renderSignin = function(req, res, next) {
+module.exports.displayLoginPage = function(req, res, next) {
     if (!req.user) {
-        res.render('auth/signin', {
-            title: 'Sign-in Form',
+        res.render('Auth/login', {
+            title: 'Login',
             messages: req.flash('error') || req.flash('info')
         });
     } else {
@@ -40,62 +40,67 @@ module.exports.renderSignin = function(req, res, next) {
     }
 };
 
-module.exports.renderSignup = function(req, res, next) {
-    if (!req.user) {
+// module.exports.processLoginPage = function(req, res, next) {
+//     if (!req.user) {
 
-        // creates a empty new user object.
-        let newUser = User();
+//         // creates a empty new user object.
+//         let newUser = User();
 
-        res.render('auth/signup', {
-            title: 'Sign-up Form',
-            messages: req.flash('error'),
-            user: newUser
-        });
+//         res.render('auth/signup', {
+//             title: 'Sign-up Form',
+//             messages: req.flash('error'),
+//             user: newUser
+//         });
 
-    } else {
-        return res.redirect('/');
-    }
-};
+//     } else {
+//         return res.redirect('/');
+//     }
+// };
 
-module.exports.signup = function(req, res, next) {
-    if (!req.user && req.body.password === req.body.password_confirm) {
-        console.log(req.body);
+// module.exports.signup = function(req, res, next) {
+//     if (!req.user && req.body.password === req.body.password_confirm) {
+//         console.log(req.body);
 
-        let user = new User(req.body);
-        user.provider = 'local';
-        console.log(user);
+//         let user = new User(req.body);
+//         user.provider = 'local';
+//         console.log(user);
 
-        user.save((err) => {
-            if (err) {
-                let message = getErrorMessage(err);
+//         user.save((err) => {
+//             if (err) {
+//                 let message = getErrorMessage(err);
 
-                req.flash('error', message);
-                return res.render('auth/signup', {
-                    title: 'Sign-up Form',
-                    messages: req.flash('error'),
-                    user: user
-                });
-            }
-            req.login(user, (err) => {
-                if (err) return next(err);
-                return res.redirect('/');
-            });
-        });
-    } else {
-        return res.redirect('/');
-    }
-};
+//                 req.flash('error', message);
+//                 return res.render('auth/signup', {
+//                     title: 'Sign-up Form',
+//                     messages: req.flash('error'),
+//                     user: user
+//                 });
+//             }
+//             req.login(user, (err) => {
+//                 if (err) return next(err);
+//                 return res.redirect('/');
+//             });
+//         });
+//     } else {
+//         return res.redirect('/');
+//     }
+// };
 
-module.exports.signout = function(req, res, next) {
-    req.logout();
-    res.redirect('/');
-};
+// module.exports.signout = function(req, res, next) {
+//     req.logout();
+//     res.redirect('/');
+// };
 
-module.exports.signin = function(req, res, next) {
+module.exports.processLoginPage = function(req, res, next) {
     passport.authenticate('local', {
-        successRedirect: req.session.url || '/',
-        failureRedirect: '/users/signin',
+        successRedirect: req.session.url || '/businesscontact',
+        failureRedirect: '/users/login',
         failureFlash: true
     })(req, res, next);
     delete req.session.url;
 }
+
+module.exports.processLogout = function(req, res, next) {
+    req.logout();
+    res.redirect('/');
+};

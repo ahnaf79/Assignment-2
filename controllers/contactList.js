@@ -15,7 +15,7 @@ module.exports.displayContactList = function(req, res, next) {
         if (err) {
             return console.error(err);
         } else {
-            res.render('businessContact/list', {
+            res.render('businesscontact/list', {
                 title: 'Business Contact',
                 contactList: contacts,
                 userName: req.user ? req.user.username : ''
@@ -81,7 +81,7 @@ module.exports.processEditPage = (req, res, next) => {
                     message: `Contact id: ${id} not found`,
                 });
             } else {
-                res.redirect('/businesscontact');
+                res.redirect('../views/businesscontact');
             }
         })
         .catch((err) => {
@@ -99,7 +99,7 @@ module.exports.performDelete = (req, res, next) => {
         } else {
 
             console.log("Successful deletion");
-            res.redirect('/businesscontact');
+            res.redirect('../views/businesscontact');
         }
 
 
