@@ -11,8 +11,6 @@ let usersController = require('../controllers/user');
 
 router.get('/login', usersController.displayLoginPage);
 router.post('/login', usersController.processLoginPage);
-
-
 router.get('/logout', usersController.processLogout);
 
 module.exports = router;

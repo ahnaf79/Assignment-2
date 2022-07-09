@@ -14,13 +14,16 @@ Date: 1st July 2022 */
 var app = require('./config/app');
 var debug = require('debug')('comp229.003.assignment-2:server');
 var http = require('http');
+let passport = require("passport");
 
+require('./config/passport')(passport);
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+//app.use(express.static("public"));
 
 /**
  * Create HTTP server.

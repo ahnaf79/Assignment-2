@@ -30,7 +30,7 @@ function getErrorMessage(err) {
 
 module.exports.displayLoginPage = function(req, res, next) {
     if (!req.user) {
-        res.render('Auth/login', {
+        res.render('auth/login', {
             title: 'Login',
             messages: req.flash('error') || req.flash('info')
         });
